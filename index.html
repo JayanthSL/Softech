@@ -526,30 +526,38 @@
 
       </div>
 
-      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-        <form onsubmit="sendMail(); reset(); return false;">
+      <section class="contact section-padding" data-scroll-index='6'>
+        <div class="container">
           <div class="row">
-            <div class="form-group col-md-6">
-              <label for="name">Your Name</label>
-              <input type="text" name="name" class="form-control" id="name" required>
+            <div class="col-md-12">
+              <div class="sectioner-header text-center">
+               
+              </div>
+              <div class="section-content">
+                <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-8">
+                    
+                      <form  id="contact_form" onsubmit="sendMail(); reset(); return false;">
+                      <div class="row">
+                        <div class="col">
+                          <input type="text" id="your_name" class="form-input w-100" name="name" placeholder="Full Name" required>
+                        </div>
+                        <div class="col">
+                          <input type="email" id="email" class="form-input w-100" name="email" placeholder="email" required>
+                        </div>
+                      </div>
+                      <input type="number" id="subject" class="form-input w-100" name="subject" placeholder="phone">
+                      <textarea class="form-input w-100" id="message" placeholder="Message" name="message"></textarea>
+                      <button class="btn-grad w-100 text-uppercase" type="submit" name="button">submit</button>
+                    </form>
+                  </div>
+                  
+                </div>
+              </div>
             </div>
-            <div class="form-group col-md-6">
-              <label for="email">Your Email</label>
-              <input type="email" class="form-control" name="email" id="email" required>
-            </div>
           </div>
-          <div class="form-group">
-            <label for="name">Phone No.</label>
-            <input type="text" class="form-control" name="phone" id="phone" required>
-          </div>
-          <div class="form-group">
-            <label for="name">Message</label>
-            <textarea class="form-control" id="message" rows="10" required></textarea>
-          </div>
-
-          <div class="text-center"><button type="submit">Send Message</button></div>
-        </form>
-      </div>
+        </div>
+      </section>
       <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
         function sendMail() {
