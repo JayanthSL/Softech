@@ -1,3 +1,5 @@
+<!--Want to make changes-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,7 +61,8 @@
         <ul>
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-
+          <!-- <li><a href="file:///C:/Madhava/College/HTML/Pricing%20Page/Another%20pricing%20page/index.html" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Pricing</span></a></li> -->
+          <li><a href="#pricing" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Pricing</span></a></li>
           <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
           <li><a href="#projects" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Projects</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
@@ -469,6 +472,99 @@
 
       </div>
     </section>
+    <section id="pricing" class="pricing">
+      <div class="container">
+
+        <div class="section-title">
+          <div class="swiper-slide">
+            <!-- <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200"> -->
+
+              <h2>Pricing</h2>
+             
+              <section class="section">
+                <div class="plan1-container">
+                  <div class="plan-upper">
+                    <div class="plan-text1">Basic</div>
+                    <div class="plan-text2">₹3,999/-</div>
+                    <div class="plan-text3">MONTHLY</div>
+                  </div>
+                  <div class="plan-middle">
+                    <div class="plan-middle-title">Single Plan</div>
+                    <ul>
+                      <li>Front End Development ✔</li>
+                      <li>Back End Development ✔</li>
+                      <li>Domain ❌</li>
+                      <li>Server and Hosting ❌</li>
+                    </ul>
+                  </div>
+                  <a class="plan-button1">BUY NOW</a>
+                </div>
+                <div class="plan2-container">
+                  <div class="plan-upper">
+                    <div class="plan2-text1">BUSINESS</div>
+                    <div class="plan2-text2">₹6,499/-</div>
+                    <div class="plan2-text3">MONTHLY</div>
+                  </div>
+                  <div class="plan2-middle">
+                    <div class="plan2-middle-title">For individuals</div>
+                    <ul>
+                      <li>Front End Development ✔</li>
+                      <li>Back End Development ✔</li>
+                      <li>Domain ✔</li>
+                      <li>Server and Hosting ✔</li>
+                    </ul>
+                  </div>
+                  <a class="plan-button2">BUY NOW</a>
+                </div>
+                <div class="plan3-container">
+                  <div class="plan-upper">
+                    <div class="plan-text1">PREMIUM</div>
+                    <div class="plan-text2">₹8,999/-</div>
+                    <div class="plan-text3">MONTHLY</div>
+                  </div>
+                  <div class="plan-middle">
+                    <div class="plan-middle-title">Single Plan</div>
+                    <ul>
+                      <li>Front End Development ✔</li>
+                      <li>Back End Development ✔</li>
+                      <li>Domain ✔</li>
+                      <li>Server and Hosting ❌</li>
+                    </ul>
+                  </div>
+                  <a class="plan-button3">BUY NOW</a>
+                </div>
+              </section>
+
+
+             
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="swiper-slide">
+          <!-- <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200"> -->
+            <p>
+
+
+            </p>
+           
+
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="swiper-pagination"></div>
+      </div>
+
+      </div>
+    </section>
     <section id="projects" class="projects">
       <div class="container">
 
@@ -525,52 +621,55 @@
       </div>
 
       </div>
-        </div>
-  
-        </div>
-  
-        <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-          <form  id="contact_form" onsubmit="sendMail(); reset(); return false;">
-            <div class="row">
-              <div class="col">
-                <input type="text" id="name" class="form-input w-100" name="name" placeholder="Full Name" required>
-              </div>
-              <div class="col">
-                <input type="email" id="email" class="form-input w-100" name="email" placeholder="email" required>
-              </div>
-            </div>
-            <input type="number" id="phone" class="form-input w-100" name="phone" placeholder="phone">
-            <textarea class="form-input w-100" id="message" placeholder="Message" name="message"></textarea>
-            <button class="btn-grad w-100 text-uppercase" type="submit" name="button">submit</button>
-          </form>
-        </div>
-        <script src="https://smtpjs.com/v3/smtp.js"></script>
-      <script>
-          function sendMail() {
-              Email.send({
-                  Host : "smtp.elasticemail.com",
-                  Username : "softech.bengaluru@outlook.com",
-                  Password : "C0126F40A0802E4449B0C1FE59E774A8AE23",
-                  To : "softech.bengaluru@outlook.com",
-                  From :  "softech.bengaluru@outlook.com",
-                  Subject : "New Contact Form Enquiry",
-                  Body : "Name: " + document.getElementById("name").value
-                          + "<br> Email: " + document.getElementById("email").value
-                          + "<br> Phone No.: " + document.getElementById("phone").value
-                          + "<br> Message: " + document.getElementById("message").value
-              }).then(
-              message => alert("Message Sent Successfully")
-              );
-          }
-      </script>
-  
-        </div>
-  
-        </div>
-      </section>
-      
 
-      
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+        <form onsubmit="sendMail(); reset(); return false;">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="name">Your Name</label>
+              <input type="text" name="name" class="form-control" id="name" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="email">Your Email</label>
+              <input type="email" class="form-control" name="email" id="email" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="name">Phone No.</label>
+            <input type="text" class="form-control" name="phone" id="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="name">Message</label>
+            <textarea class="form-control" id="message" rows="10" required></textarea>
+          </div>
+
+          <div class="text-center"><button type="submit">Send Message</button></div>
+        </form>
+      </div>
+      <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendMail() {
+            Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "softech.bengaluru@outlook.com",
+                Password : "C0126F40A0802E4449B0C1FE59E774A8AE23",
+                To : "softech.bengaluru@outlook.com",
+                From :  "softech.bengaluru@outlook.com",
+                Subject : "New Contact Form Enquiry",
+                Body : "Name: " + document.getElementById("name").value
+                        + "<br> Email: " + document.getElementById("email").value
+                        + "<br> Phone No.: " + document.getElementById("phone").value
+                        + "<br> Message: " + document.getElementById("message").value
+            }).then(
+            message => alert("Message Sent Successfully")
+            );
+        }
+    </script>
+
+      </div>
+
+      </div>
+    </section>
 
   </main>
   <footer id="footer">
