@@ -2,6 +2,83 @@
 <html lang="en">
 
 <head>
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box;}
+    
+    /* Button used to open the contact form - fixed at the bottom of the page */
+    .open-button {
+      background-color: #555;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      bottom: 23px;
+      right: 28px;
+      width: 280px;
+    }
+    
+    /* The popup form - hidden by default */
+    .form-popup {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      /* padding-right: 40px; */
+      margin-right: 450px;
+      margin-bottom: 100px;
+      filter: blur();
+      right: 15px;
+      border: 3px solid #f1f1f1;
+      z-index: 9;
+    }
+    
+    /* Add styles to the form container */
+    .form-container {
+      max-width: 300px;
+      padding: 10px;
+      background-color: white;
+    }
+    
+    /* Full-width input fields */
+    .form-container input[type=text], .form-container input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+    }
+    
+    /* When the inputs get focus, do something */
+    .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+    
+    /* Set a style for the submit/login button */
+    .form-container .btn {
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom:10px;
+      opacity: 0.8;
+    }
+    
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+      background-color: red;
+    }
+    
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover, .open-button:hover {
+      opacity: 1;
+    }
+    </style>
+
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -61,7 +138,7 @@
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
           <li><a href="#pricing" class="nav-link scrollto"><i class="bx bx-money-withdraw"></i> <span>Pricing</span></a></li>
           <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
-          <li><a href="#projects" class="nav-link scrollto"><i class="bx bx-book-open"></i> <span>Projects</span></a></li>
+          <li><a href="#projects" class="nav-link scrollto"><i class="bx bx-book-alt"></i> <span>Projects</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
          
       </nav>
@@ -494,7 +571,7 @@
                       <li>Server and Hosting ❌</li>
                     </ul>
                   </div>
-                  <a class="plan-button1">BUY NOW</a>
+                  <a class="plan-button1" onclick="openForm()">BUY NOW</a>
                 </div>
                 <div class="plan2-container">
                   <div class="plan-upper">
@@ -511,7 +588,7 @@
                       <li>Server and Hosting ✔</li>
                     </ul>
                   </div>
-                  <a class="plan-button2">BUY NOW</a>
+                  <a class="plan-button2" onclick="openForm()">BUY NOW</a>
                 </div>
                 <div class="plan3-container">
                   <div class="plan-upper">
@@ -528,7 +605,97 @@
                       <li>Server and Hosting ❌</li>
                     </ul>
                   </div>
-                  <a class="plan-button3">BUY NOW</a>
+                  <a class="plan-button3" onclick="openForm()">BUY NOW</a>
+                  <div class="form-popup" id="myForm">
+                    <form class="form-container" onsubmit="sendEmail(); reset(); return false;">
+                      <!-- <h1>Login</h1> -->
+                      <!-- <label for="name"><b>User Name</b></label> -->
+                      <input type="text" placeholder="Your Name" name="name" id="form-name" required>
+
+                      <!-- <label for="email"><b></b></label> -->
+                      <input type="text" placeholder="Your Phone Number" name="number" id="form-number" required>
+
+                      <!-- <label for="email"><b>Email</b></label> -->
+                      <input type="text" placeholder="Enter Email" name="email" id="form-email">
+                  
+                      <!-- <label for="psw"><b>Password</b></label> -->
+                      <input type="text" placeholder="Enter Message" name="text" id="form-message" required>
+                  
+                      <button type="submit" class="btn">Request A Quote</button>
+                      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                    </form>
+                  </div>
+                  <script src="https://smtpjs.com/v3/smtp.js"></script>
+              <script>
+                  function sendEmail() {
+                      Email.send({
+                          Host : "smtp.elasticemail.com",
+                          Username : "softech.bengaluru@outlook.com",
+                          Password : "C0126F40A0802E4449B0C1FE59E774A8AE23",
+                          To : document.getElementById("form-email").value,
+                          From :  "softech.bengaluru@outlook.com",
+                          Subject : "Quote From Softech",
+//                           Body : <p>"Dear ,
+
+// Req: Web Design Quotation 
+
+// We are delighted to present you with a quotation for the design and development of a website for [Client's Company Name]. We appreciate the opportunity to work with you on this exciting project. Below, you will find a detailed breakdown of our proposal.
+
+// Scope of Work:
+// - Website Design and Development
+
+// Timeline:
+// - We are happy to server your website within 3-4 months.
+
+// Quotation Details:
+
+// 1. Website Design:
+//    - Custom Website Design: Basic Design , Business Design,Premium Design.
+
+// 2. Website Development:
+//    - Front-end Development: ₹3,000
+//    - Back-end Development (if applicable): ₹2,500
+
+
+// 3. Hosting and Domain (if applicable):
+//    - Hosting Plan:₹35,000/year
+//    - Domain Registration: ₹2,500/year
+
+
+// Payment Terms:
+// - Specify your payment terms,  50% upfront, 25% at project midpoint, 25% upon completion
+
+// Terms and Conditions:
+// - Include any relevant terms and conditions, such as the ownership of the website, copyrights, and warranties
+
+// Please note that this quotation is based on the information provided and is subject to change if the project scope or requirements are modified.
+
+// If you have any questions or require further clarification, please do not hesitate to contact us. We look forward to the opportunity to collaborate with you and create an outstanding web presence .
+
+// Thank you for considering our proposal.
+
+// Sincerely,
+
+// Jayanth
+// Softech
+// softech.bengaluru@outlook.com
+// https://softech-in.github.io/testing/"</p>
+                      }).then(
+                      message => alert("Message Sent Successfully")
+                      );
+                  }
+              </script>
+                  
+                  <script>
+                  function openForm() {
+                    document.getElementById("myForm").style.display = "block";
+                  }
+                  
+                  function closeForm() {
+                    document.getElementById("myForm").style.display = "none";
+                  }
+                  </script>
+                  
                 </div>
               </section>
 
@@ -695,3 +862,7 @@
 </body>
 
 </html>
+
+<!-- // 4. Maintenance and Support:
+//    - Monthly Maintenance and Support: $[Amount/month]
+//    - Duration of Maintenance Contract: [Specify the duration, e.g., 12 months] -->
