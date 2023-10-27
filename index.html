@@ -4,8 +4,62 @@
 <head>
 
   <style>
-    
+
+
+  .img-box, img {
+      width: 100%;
+      transition: 0.5s all ease-in-out;
+  }
+
+  .img-box {
+     width: 500px;
+     height: 350px;
+
+     margin-left: 150px;
+  }
+ 
+
+  #contact-box {
+    text-align: center; 
+  }
+  
+  #contact-box .contact-box {
+    width: 112%; 
+  }
+  
+  #contact-box .contact-box img {
+
+margin-top: -72px;
+
+
+
+  }
+  #quote{
+margin-top: 80px;
+    background-image: url(./assets/img/body_bg.jpg);
+  }
+  
+  
+  .front-contact-section {
+
+
+    background-color: aliceblue;
+  }
+  
+  #maptest{
+    margin-left: 800px;
+    margin-top: -400px;
+  }
+  #Backgr{
+    background-color: white;
+  }
+  #class12{
+    color: black;
+  }
     </style>
+ 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -35,7 +89,31 @@
  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
  rel="stylesheet"
 />
+ <!-- Basic -->
+ <meta charset="utf-8" />
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ <!-- Mobile Metas -->
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+ <!-- Site Metas -->
+ <meta name="keywords" content="" />
+ <meta name="description" content="" />
+ <meta name="author" content="" />
 
+
+
+ <!-- slider stylesheet -->
+ <link rel="stylesheet" type="text/css"
+   href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+
+ <!-- font wesome stylesheet -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+ <!-- bootstrap core css -->
+ <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+ <!-- fonts style -->
+ <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
 
 <link
  rel="stylesheet"
@@ -99,17 +177,41 @@
 </head>
 
 <body>
+  <!-- Spinner Start -->
+      <!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div> -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+      <img src="assets/img/so.png" alt="Your Image Alt Text" class="rotate-image">
+  </div>
+  <!-- <div id="spinner" class="show">
+    <img src="assets/img/so.png" alt="Your Image Alt Text" class="rotate-image">
+</div> -->
+
+  <!-- Spinner End -->
+  <script>
+     
+      function hideSpinner() {
+        setTimeout(function () {
+          var spinner = document.getElementById("spinner");
+          spinner.classList.remove("show");
+        }, 1000); 
+      }
+  
+      // Call the function when the document is ready
+      document.addEventListener("DOMContentLoaded", hideSpinner);
+    </script>
 
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
 
-  <header id="header">
+  <!-- <header id="header"> -->
     <div class="d-flex flex-column">
 
       <div class="profile">
 
 
-        <nav>
+        <!-- <nav>
           <h1 class="text-light"><a href="#hero">Softech</a></h1>
 
           <div class="social-links mt-3 text-center">
@@ -120,17 +222,22 @@
             <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
           </div>
       </div>
-      </nav>
+      </nav> -->
       <nav id="navbar" class="nav-menu navbar">
+        <a href="#hero" class="logo-image">
+            <img src="assets/img/soft.jpeg" alt="Softech Logo" >
+        </a>
         <ul>
+          
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="about.html" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
 
-          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
+
+          <li><a href="services.html" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
           <li><a href="#pricing" class="nav-link scrollto"><i class="bx bx-money-withdraw"></i> <span>Pricing</span></a></li>
-          <li><a href="#projects" class="nav-link scrollto"><i class="bx bx-book-alt"></i> <span>Projects</span></a></li>
+          <li><a href="project.htm" class="nav-link scrollto"><i class="bx bx-book-alt"></i> <span>Projects</span></a></li>
 
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+          <li><a href="contact.htm" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
           <li class="nav-item">
 
           </li>
@@ -138,6 +245,10 @@
       </nav>
     </div>
   </header>
+ 
+  
+  
+
 
 
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
@@ -147,813 +258,125 @@
     </div>
   </section>
 
-  <main id="main">
+  <!-- <main id="main"> -->
 
 
-    <section id="about" class="about">
-      <div class="container">
-        <section id="about" class="about">
-          <div class="container">
     
-            <div class="section-title">
-              <h2>About</h2>
-              <h2>Developer Name : Jayanth S</h2>
-             
-              <!-- <h3>Developer Name : Jayanth S</h3> -->
-            </div>
-             <!-- <h2>Developer Name : Jayanth S</h2> -->
-    
-            <div class="row">
-              <div class="col-lg-4" data-aos="fade-right">
-                <img src="assets/img/jayanth.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-                <h3>Back-End Developer , UI Design & Web Developer.</h3>
-                <p class="fst-italic">
-    
-                </p>
-                <div class="row">
-                  <div class="col-lg-6">
-                    <ul>
-    
-    
-    
-                    </ul>
-                  </div>
-                  <div class="col-lg-6">
-                    <ul>
-                      <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>18</span></li>
-                      <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>2nd YEAR BSC</span></li>
-                      <li><i class="bi bi-chevron-right"></i> <strong>University:</strong> <span>Gardencity University</span></li>
-                      <!-- <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>email@example.com</span> -->
-                      </li>
-    
-                    </ul>
-                  </div>
-                </div>
-                <p>
-    
-                </p>
-              </div>
-            </div>
-    
-          </div>
-        </section>
-        <section id="skills" class="skills section-bg">
-          <div class="container">
-    
-            <div class="section-title">
-              <h2>Skills</h2>
-              <p>Web Design,Python,Front-End Works,Back-End Works,UI Design,Networking</p>
-            </div>
-    
-            <div class="row skills-content">
-    
-              <div class="col-lg-6" data-aos="fade-up">
-    
-                <div class="progress">
-                  <span class="skill">HTML <i class="val"></i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                    </div>
-                  </div>
-                </div>
-    
-                <div class="progress">
-                  <span class="skill">CSS <i class="val"></i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                    </div>
-                  </div>
-                </div>
-                <div class="progress">
-                  <span class="skill">Java Script <i class="val"></i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                    </div>
-                  </div>
-                </div>
-    
-                <div class="progress">
-                  <span class="skill">Python <i class="val"></i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                    </div>
-                  </div>
-                </div>
-    
-              </div>
-    
-              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-    
-                <div class="progress">
-                  <span class="skill">Data base <i class="val"></i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                    </div>
-                  </div>
-                </div>
-    
-    
-    
-    
-              </div>
-    
-            </div>
-    
-          </div>
-        </section>
-
-        <div class="section-title">
-          <h2>About</h2>
-          <h2>Developer Name : Ankit</h2>
-        </div>
-
+    <section class="about_section layout_padding" id="Backgr">
+      <div class="container " >
         <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/ankit.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Front-End Developer & Web Developer.</h3>
-            <p class="fst-italic">
-
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-
-
-
-                </ul>
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>
+                  About Us
+                </h2>
               </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>21</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>1ST YEAR BSC</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>University:</strong> <span>Gardencity University</span></li>
-                  <!-- <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>email@example.com</span> -->
-                  </li>
+              <p id="class12">
+                Welcome to Softech-Bengaluru - Your Trusted Partner for Web Design and Web Security!
 
-                </ul>
-              </div>
+                At Softech, we are passionate about creating stunning, user-friendly websites and ensuring they are fortified with robust security measures. We understand the digital landscape is ever-evolving, and our mission is to help businesses and individuals thrive online by providing top-notch web design and web security services.
+              </p>
+              <div class="btn-box1">
+              <a href="">
+                Get Started
+              </a>
             </div>
-            <p>
-
-            </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="img-box">
+              <img src="assets/img/webdes.avif" alt="">
+            </div>
           </div>
         </div>
-
       </div>
     </section>
-    <section id="skills" class="skills section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>Web Design,Python,Front-End Works,Linex Programming,Networking</p>
-        </div>
-
-        <div class="row skills-content">
-
-          <div class="col-lg-6" data-aos="fade-up">
-
-            <div class="progress">
-              <span class="skill">HTML <i class="val"></i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">CSS <i class="val"></i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Python <i class="val"></i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="progress">
-              <span class="skill">Data base <i class="val"></i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
+   
 
 
+<!-- end of about -->
 
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>About</h2>
-          <h2>Developer Name : Madhava</h2>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/madhava.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Front-End Developer & Web Developer.</h3>
-            <p class="fst-italic">
-
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-
-
-
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>18</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>1ST YEAR BSC</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>University:</strong> <span>Gardencity University</span></li>
-                  <!-- <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>email@example.com</span> -->
-                  </li>
-
-                </ul>
-              </div>
-            </div>
-            <p>
-
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-    <section id="skills" class="skills section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>Web Design,Python,Front-End Works,Networking</p>
-        </div>
-
-        <div class="row skills-content">
-
-          <div class="col-lg-6" data-aos="fade-up">
-
-            <div class="progress">
-              <span class="skill">HTML <i class="val"></i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">CSS <i class="val"></i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Python <i class="val"></i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-
-
-
-        </div>
-
-      </div>
-
-      </div>
-    </section>
-
-
-    </div>
-
-    </div>
-    </section>
-
-
-    </div>
-
-    </div>
-    </section>
-  </div>
-  <div class="swiper-pagination"></div>
-  </div>
-
-  </div>
-</section>
-
-
-
-          </p>
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-    <div class="swiper-slide">
-      <!-- <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200"> -->
-        <p>
-
-
-        </p>
-
-
-      </div>
-    </div>
-
-
-    <section id="services" class="services">
-      <div class="container">
-
-        <div class="section-title">
-          <div class="swiper-slide">
-            <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-
-              <h2>Services</h2>
-              <section class="service_section layout_padding">
-                <div class="service_container">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="box">
-                          <div class="img-box">
-                            <img src="assets/img/web1.jpg"  alt="">
-                          </div>
-                          <div class="detail-box">
-                            <h5>WEB DESEIGN</h5>
-                            <p>
-                              This involves creating the visual layout and design of a website, including the use of
-                              colors,
-                              fonts, images, and other graphical elements.
-                            </p>
-                            <a href=""> </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="box">
-                          <div class="img-box">
-                           
-                            <img src="assets/img/frontweb.jpg"  alt="">
-                          </div>
-                          <div class="detail-box">
-                            <h5>FRONT-END DEVELOPMENT</h5>
-                            <p>
-                              This involves writing code in languages such as HTML, CSS, and JavaScript to
-                              create This involves creating online stores and shopping carts using platforms
-
-                             
-                            </p>
-                            <a href=""> </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="box">
-                          <div class="img-box">
-                            
-                            <img src="assets/img/backend.jpg"  alt="">
-                          </div>
-                          <div class="detail-box">
-                            <h5>WEBSITE MAINTAINANCE</h5>
-                            <p>
-                              After a website is launched, a web development company may offer
-                              ongoing
-                              maintenance and support services to ensure the website.
-                            </p>
-                            <a href=""> </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                 
-              <section class="service_section layout_padding">
-                <div class="container">
-                  <div class="row">
-                      <div id="service-section-3" class="col-md-4">
-                        
-                        <div class="box">
-                          <div class="img-box">
-                           
-                            <img src="assets/img/fullstack.jpeg"  alt="">
-                          </div>
-                          <div class="detail-box">
-                            <h5>FULL-STACK DEVELOPMENT</h5>
-                            <p>
-                              This involves both front-end and back-end development, allowing a web
-                              company to provide end-to-end web services.
-
-                             
-                            </p>
-                            <a href=""> </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div id="service-section-1" class="col-md-4">
-                        
-                        <div class="box">
-                          <div class="img-box">
-                           
-                            <img src="assets/img/ecommerce.jpeg"  alt="">
-                          </div>
-                          <div class="detail-box">
-                            <h5>E-COMMERCE DEVELOPMENT</h5>
-                            <p>
-                              This involves creating online stores and shopping carts using platforms such as
-                              Shopify or Magento.
-                             
-                            </p>
-                            <a href=""> </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div id="service-section-2" class="col-md-4">
-                        <div class="box">
-                          <div class="img-box">
-                            
-                            <img src="assets/img/backend.jpeg"  alt="">
-                          </div>
-                          <div class="detail-box">
-                            <h5>BACK-END DEVELOPMENT</h5>
-                            <p>
-                              This involves writing code in languages such as PHP, Python, or Ruby on Rails to
-                              create the server-side functional website..
-                             </p>
-                            <a href=""> </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="btn-box">
-                      <a  id="viewAllButton">View All</a>
-                    </div>
-                    
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const serviceSections = [
-        document.getElementById("service-section-1"),
-        document.getElementById("service-section-2"),
-        document.getElementById("service-section-3")
-      ];
+<!-- start of quote -->
+    <div class="body_bg layout_padding" id="quote">
   
       
-      serviceSections[0].style.display = "none";
-      serviceSections[1].style.display = "none";
-      serviceSections[2].style.display = "none";
-  
-      const viewAllButton = document.getElementById("viewAllButton");
-      const viewLessButton = document.createElement("a");
-      viewLessButton.textContent = "View Less";
-      viewLessButton.style.display = "none";
-      viewAllButton.insertAdjacentElement("afterend", viewLessButton);
-  
-      viewAllButton.addEventListener("click", function () {
-        serviceSections.forEach(section => {
-          section.style.display = "block";
-        });
-        viewAllButton.style.display = "none";
-        viewLessButton.style.display = "block";
-      });
-  
-      viewLessButton.addEventListener("click", function () {
-        serviceSections.forEach(section => {
-          section.style.display = "none";
-        });
-        viewAllButton.style.display = "block";
-        viewLessButton.style.display = "none";
-      });
-    });
-  </script>
-  
-  <section id="pricing" class="pricing">
-    <div class="container">
-  
-      <div class="section-title">
-        <div class="swiper-slide">
-          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-  
-            <h2>Pricing</h2>
-  
-            <section class="section">
-              <div class="plan1-container">
-                <div class="plan-upper">
-                  <div class="plan-text1">Basic</div>
-                  <div class="plan-text2">₹3,999/-</div>
-                  <div class="plan-text3">MONTHLY</div>
-                </div>
-                <div class="plan-middle">
-                  <div class="plan-middle-title">Single Plan</div>
-                  <ul>
-                    <li>Front End Development ✔</li>
-                    <li>Back End Development ✔</li>
-                    <li>Domain ❌</li>
-                    <li>Server and Hosting ❌</li>
-                  </ul>
-                </div>
-                <a class="plan-button1" onclick="openForm()">BUY NOW</a>
-              </div>
-              <div class="plan2-container">
-                <div class="plan-upper">
-                  <div class="plan2-text1">BUSINESS</div>
-                  <div class="plan2-text2">₹6,499/-</div>
-                  <div class="plan2-text3">MONTHLY</div>
-                </div>
-                <div class="plan2-middle">
-                  <div class="plan2-middle-title">For individuals</div>
-                  <ul>
-                    <li>Front End Development ✔</li>
-                    <li>Back End Development ✔</li>
-                    <li>Domain ✔</li>
-                    <li>Server and Hosting ✔</li>
-                  </ul>
-                </div>
-                <a class="plan-button2" onclick="openForm()">BUY NOW</a>
-              </div>
-              <div class="plan3-container">
-                <div class="plan-upper">
-                  <div class="plan-text1">PREMIUM</div>
-                  <div class="plan-text2">₹8,999/-</div>
-                  <div class="plan-text3">MONTHLY</div>
-                </div>
-                <div class="plan-middle">
-                  <div class="plan-middle-title">Single Plan</div>
-                  <ul>
-                    <li>Front End Development ✔</li>
-                    <li>Back End Development ✔</li>
-                    <li>Domain ✔</li>
-                    <li>Server and Hosting ❌</li>
-                  </ul>
-                </div>
-                <a class="plan-button3" onclick="openForm()">BUY NOW</a>
-                  <div class="form-popup" id="myForm">
-                    <form class="form-container" onsubmit="sendEmail(); sendMail(); reset(); return false;">
-                      <!-- <h1>Login</h1> -->
-                      <!-- <label for="name"><b>User Name</b></label> -->
-                      <button type="button123" class="btn cancel" onclick="closeForm()">✖</button>
-                      <input type="text" placeholder="Your Name" name="name" id="form-name" required>
-
-                      <!-- <label for="email"><b></b></label> -->
-                      <input type="text" placeholder="Your Phone Number" name="number" id="form-number">
-
-                      <!-- <label for="email"><b>Email</b></label> -->
-                      <input type="text" placeholder="Enter Email" name="email" id="form-email" required>
-
-                      <!-- <label for="psw"><b>Password</b></label> -->
-                      <input type="text" placeholder="Enter Message" name="text" id="form-message">
-
-                      <button type="submit" class="btn">Request A Quote</button>
-                   
-                    </form>
-                  </div>
-                  <script src="https://smtpjs.com/v3/smtp.js"></script>
-              <script>
-                      function sendEmail() {
-        var emailContent = `
-            
-            <p> Req: Web Design Quotation</p>
-            <p> We are delighted to present you with a quotation for the design and development of a website for [Client's Company Name]. We appreciate the opportunity to work with you on this exciting project. Below, you will find a detailed breakdown of our proposal.</p>
-            <p> Scope of Work:</p>
-            <p>- Website Design and Development</p>
-            <p>Timeline:</p>
-            <p>- We are happy to serve your website within 3-4 months.</p>
-            <p>Quotation Details:</p>
-            <p> 1. Website Design:</p>
-            <p>    - Custom Website Design: Basic Design, Business Design, Premium Design.</p>
-            <p> 2. Website Development:</p>
-            <p>    - Front-end Development: ₹3,000</p>
-            <p>    - Back-end Development (if applicable): ₹2,500</p>
-            <p>3. Hosting and Domain (if applicable):</p>
-            <p>   - Hosting Plan: ₹35,000/year</p>
-            <p>    - Domain Registration: ₹2,500/year</p>
-            <p> Payment Terms:</p>
-            <p> - Specify your payment terms, 50% upfront, 25% at project midpoint, 25% upon completion</p>
-            <p> Terms and Conditions:</p>
-            <p>- Include any relevant terms and conditions, such as the ownership of the website, copyrights, and warranties</p>
-            <p>Please note that this quotation is based on the information provided and is subject to change if the project scope or requirements are modified.</p>
-            <p> If you have any questions or require further clarification, please do not hesitate to contact us. We look forward to the opportunity to collaborate with you and create an outstanding web presence.</p>
-            <p> Thank you for considering our proposal.</p>
-            <p>                        </p>
-            <p> Sincerely,</p>
-            <p> Team,</p>
-            <p> Softech</p>
-            <p> softech.bengaluru@outlook.com</p>
-            <p> https://softech-in.github.io/testing/</p>
-        `;
-
-        Email.send({
-            Host: "smtp.elasticemail.com",
-            Username: "softech.bengaluru@outlook.com",
-            Password: "C0126F40A0802E4449B0C1FE59E774A8AE23",
-            To: document.getElementById("form-email").value,
-            From: "softech.bengaluru@outlook.com",
-            Subject: "Quote From Softech",
-            Body: "Dear" + document.getElementById("form-name").value + "," + emailContent
-        }).then(message => alert("Message Sent Successfully"));
-    }
-</script>
-
-                  <script>
-                  function openForm() {
-                    document.getElementById("myForm").style.display = "block";
-                  }
-
-                  function closeForm() {
-                    document.getElementById("myForm").style.display = "none";
-                  }
-                  </script>
-
-
-              </div>
-            </section>
-  
-
-        
-
-
-
-        
-  </body>
-  </html>
-
-        <div class="swiper-slide">
-          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-            <p>
-
-
-            </p>
-            <!-- <img src="assets/img/cmgsoon.jpeg" alt="coming soon" style="max-width: 100%; height: auto; "> -->
-
-            <style>
-              @media (max-width: 768px) {}
-            </style>
-
-
-          </div>
-        </div>
-
-
-
-      </div>
-      <div class="swiper-pagination"></div>
-      </div>
-
-      </div>
-    </section>
-    <section id="projects" class="projects">
-      <div class="container">
-
-        <div class="section-title">
-          <div class="swiper-slide">
-            <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-
-              <h2>Projects</h2>
-              <!-- To-do -->
+      <section class="quote_section layout_padding">
+        <div class="container">
+          <div class="box">
+            <div class="detail-box">
+              <h3>
+                Get Your Quote Today!
+              </h3>
+              <p>
+                It is a long established fact that a reader will be distracted by the readable content of a page
+              </p>
+            </div>
+            <div class="btn-box">
+              <a href="">
+                Get A Quote
+              </a>
             </div>
           </div>
         </div>
-
-
-
-
-
-        <div class="swiper-slide">
-          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-            <p>
-
-
-            </p>
-            <img src="assets/img/cmgsoon.jpeg" alt="coming soon" style="max-width: 100%; height: auto; ">
-
-            <style>
-            @media (max-width: 768px) {
-              
-            }
-            </style>
-            
-
+      </section>
+      <!-- end of quote -->
+  
+     <!-- start of services -->
+     
+     <!-- end of services -->
+  <!-- start of contact -->
+      <section class="contact_section front-contact-section" id="contact">
+        <div class="container">
+          <div class="heading_container">
+            <h2>
+              Contact Us
+            </h2>
           </div>
         </div>
-
-
-
-      </div>
-      <div class="swiper-pagination"></div>
-      </div>
-
-      </div>
-    </section>
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-
-        </div>
-
-
-
-      </div>
-
-      </div>
-        </div>
-  
-        </div>
-  
-        <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-          <form  id="contact_form" onsubmit="sendMail(); reset(); return false;">
-            <div class="row">
-              <div class="col">
-                <input type="text" id="name" class="form-input w-100" name="name" placeholder="Full Name" required>
-              </div>
-              <div class="col">
-                <input type="email" id="email" class="form-input w-100" name="email" placeholder="email" required>
+        <div class="container contact_bg layout_padding2-top">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="contact_form">
+                <form action="">
+                  <input type="text" placeholder="Name">
+                  <input type="email" placeholder="Email">
+                  <input type="text" placeholder="Message" class="message_input">
+                  <button>
+                    Send
+                  </button>
+                </form>
               </div>
             </div>
-            <input type="number" id="phone" class="form-input w-100" name="phone" placeholder="phone">
-            <textarea class="form-input w-100" id="message" placeholder="Message" name="message"></textarea>
-            <button class="btn-grad w-100 text-uppercase" type="submit" name="button">submit</button>
-          </form>
-        </div>
-        <script src="https://smtpjs.com/v3/smtp.js"></script>
-      <script>
-          function sendMail() {
-              Email.send({
-                  Host : "smtp.elasticemail.com",
-                  Username : "softech.bengaluru@outlook.com",
-                  Password : "C0126F40A0802E4449B0C1FE59E774A8AE23",
-                  To : "softech.bengaluru@outlook.com",
-                  From :  "softech.bengaluru@outlook.com",
-                  Subject : "New Contact Form Enquiry",
-                  Body : "Name: " + document.getElementById("name").value
-                          + "<br> Form Name: " + document.getElementById("form-name").value
-                          + "<br> Email: " + document.getElementById("email").value
-                          + "<br> Form Email: " + document.getElementById("form-email").value
-                          + "<br> Phone No.: " + document.getElementById("phone").value
-                          + "<br> Form Phone No.: " + document.getElementById("form-number").value
-                          + "<br> Message: " + document.getElementById("message").value
-                          + "<br> Form Message: " + document.getElementById("form-message").value
-              }).then(
-              message => alert("Message Sent Successfully")
-              );
-          }
-      </script>
-  
-        </div>
-  
+            <div class="col-md-6" id="contact-box">
+              <div class="contact-box">
+                <img src="assets/img/con.avif" alt="">
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       
-
+     
+  
       
+  
+    
+  
+    </div>
+   
 
-  </main>
-  <footer id="footer">
+  
+  
+  
+  
+    
+  
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+   
+  <footer id="footer"> 
     <div class="container mx-auto">
 
       <div class="credits">

@@ -136,14 +136,18 @@ a {
 
 .plan-middle-title,
 .plan2-middle-title {
-  text-align: center;
+  text-align: left; 
+  font-family: geneva;
   font-weight: 600;
+  font-size: x-large;
+  margin-left: 32px; 
 }
 
 .plan-text1,
 .plan2-text1 {
   font-size: 1.25rem;
   font-weight: 700;
+
 }
 
 .plan-text2,
@@ -151,15 +155,22 @@ a {
   font-weight: 700;
   font-size: 2rem;
 }
+.plan-text1,
+.plan2-text1 {
+  color: rgb(4,163,218);
+
+}
 
 .plan-text3,
 .plan2-text3 {
-  font-weight: 700;
+  font-weight: 200;
+  font-size: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 0.1rem;
   color: var(--gh-grey-2);
 }
 
-.plan2-text1,
+
 .plan2-text2,
 .plan2-text3 {
   color: #000000;
@@ -177,58 +188,114 @@ a {
   flex-direction: column;
 }
 
+
+.plan-text3 {
+  border-bottom: 1px dotted #999;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  margin-left: -400px; 
+  margin-right: -400px; 
+  padding-left: 110px; 
+  padding-right: 110px; 
+}
+.plan2-text3{
+  border-bottom: 1px dotted #999;
+  margin-bottom: 15px;
+  padding-bottom: 20px;
+  margin-left: -400px; 
+  margin-right: -390px;
+  padding-left: 110px; 
+  padding-right: 110px;
+}
+
+/* left texed css */
 .plan-middle ul li,
 .plan2-middle ul li {
-  margin: 10px;
-  text-align: center;
+  margin: 10px 10px 10px 0; 
+  text-align: left;
+}
+ul li {
+  display: flex;
+
+  justify-content: space-between; 
+  align-items:end; 
+}
+
+ul li img {
+  width: 30px;
+  margin-left: 30px;
+  height: 30px;
 }
 
 .plan2-middle {
   color: #000000;
 }
 
-.plan-button1,
-.plan-button2,
-.plan-button3 {
-  color: #ffffff;
-  padding: 10px 50px;
-  border-radius: 15px;
+
+.button-65 {
+  appearance: none;
+  backface-visibility: hidden;
+  background-color:rgb(4,163,218);
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #fff;
   cursor: pointer;
-  margin-top: 10px;
-  font-weight: 600px;
-  width: 190px;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  height: 50px;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 14px 30px;
+  position: relative;
   text-align: center;
-  box-shadow: 0 5px #999;
+  color: white;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+  margin-top: 50px;
 }
 
-.plan-button1 {
-  background-color: #149ddd;
-}
-.plan-button1:active {
-  background-color: var(--gh-green-9);
-}
-
-.plan-button2 {
-  background-color: #149ddd;
-}
-.plan-button2:active {
-  background-color: var(--gh-blue-7);
+.button-65:hover {
+  
+  background-color: #1366d6;
+  /* box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px; */
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
 }
 
-.plan-button3 {
-  background-color: #149ddd;
+.button-65:hover:after {
+  opacity: .5;
 }
 
-.plan-button3:active {
-  background-color: var(--gh-blue-8);
+.button-65:active {
+  box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
+  transform: translateY(2px);
+  transition-duration: .35s;
 }
 
-.plan-button1:active,
-.plan-button2:active,
-.plan-button3:active {
-  box-shadow: 0 5px var(--gh-grey-4);
-  transform: translate(4px);
+.button-65:active:after {
+  opacity: 1;
 }
+
+@media (min-width: 768px) {
+  .button-65 {
+    padding: 14px 22px;
+    width: 176px;
+  }
+}
+
 
 .highlight {
   position: absolute;
@@ -244,6 +311,4 @@ a {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
-.cancel-button {
-  float: right;
-}
+
