@@ -338,14 +338,37 @@ margin-top: 80px;
           <div class="row">
             <div class="col-md-6">
               <div class="contact_form">
-                <form action="">
-                  <input type="text" placeholder="Name">
-                  <input type="email" placeholder="Email">
-                  <input type="text" placeholder="Message" class="message_input">
-                  <button>
+                <form onsubmit="sendMail()">
+                  <input type="text" placeholder="Name" id="formname">
+                  <input type="email" placeholder="Email" id="formemail">
+                  <input type="text" placeholder="Message" class="message_input" id="form-message">
+                  <button  type="submit">
                     Send
-                  </button>
+                  </button >
                 </form>
+                <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendMail() {
+            Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "softech.bengaluru@outlook.com",
+                Password : "C0126F40A0802E4449B0C1FE59E774A8AE23",
+                To : "gowdaj159@gmail.com",
+                From :  "softech.bengaluru@outlook.com",
+                Subject : "New Contact Form Enquiry",
+                Body : 
+                         "Form Name: " + document.getElementById("formname").value
+                        + "<br> Email: " + document.getElementById("formemail").value
+
+                        + "<br> Form Message: " + document.getElementById("form-message").value
+            }).then(
+            message => alert("Message Sent Successfully")
+            );
+console.log("print senttttt")
+
+        }
+        
+      </script>
               </div>
             </div>
             <div class="col-md-6" id="contact-box">
